@@ -494,8 +494,9 @@ Then compute some diversity indices.
 Before finalizing and turning in our notebook, add  commentary. 
 
 How do you interpret the indices computed for the County data?
-
+Cannot come up with the indicies because it says the function is not available
 
 Now process the other three lists in the same fashion.
 
 How do you interpret indices computed from your second type of data? 
+(See Above)
