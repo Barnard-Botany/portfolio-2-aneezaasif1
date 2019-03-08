@@ -340,17 +340,17 @@ In other words, two or more samples with a similar species composition and speci
 ```{r}
 #library("bien")
 #As you know, you can obtain species occurrence data from the BIEN database, or from another even more comprehensive data base called gbif (gbif.org). Occurrence data is a type of abundance data, and it can also be used to figure out presence-absence data. 
-bronx <- BIEN_occurrence_county(country="United States", state="New York", county = "Bronx")
-head(bronx)
-tail(bronx)
-manhattan <- BIEN_occurrence_county(country="United States", state="New York", county = "New York")
-head(manhattan)
-tail(manhattan)
-attributes(manhattan)
-westchester <- BIEN_occurrence_county(country="United States", state="New York", county = "Westchester")
-head(westchester)
-tail(westchester)
-attributes(westchester)
+Arlington <- BIEN_occurrence_county(country="United States", state="Virginia", county = "Arlington")
+head(Arlington)
+tail(Arlington)
+Fairfax <- BIEN_occurrence_county(country="United States", state="Virginia", county = "Fairfax")
+head(Fairfax)
+tail(Fairfax)
+attributes(Fairfax)
+Amherst <- BIEN_occurrence_county(country="United States", state="Virginia", county = "Amherst")
+head(Amherst)
+tail(Amherst)
+attributes(Amherst)
 ```
 
 ##Now I'm going to work with county data
@@ -358,34 +358,34 @@ attributes(westchester)
 ```{r}
 #library(BIEN)
 #We previously learned to "slim down" data sets to one or a few variables, which we can do here
-bronx.occ=bronx[c(1)]
-head(bronx.occ)
-manhattan.occ=manhattan[c(1)]
-head(manhattan.occ)
-westchester.occ=westchester[c(1)]
-head(westchester.occ)
-#These are now two species occurrence lists, one for The Bronx, one for Manhattan
+Arlington.occ=Arlington[c(1)]
+head(Arlington.occ)
+Fairfax.occ=Fairfax[c(1)]
+head(Fairfax.occ)
+Amherst.occ=Amherst[c(1)]
+head(Amherst.occ)
+#These are now two species occurrence lists, one for The Arlington, one for Fairfax
 #To turn them into species lists with abundance data, you can recycle the code from above.
-bronx.ab=count(bronx.occ)
-head(bronx.ab)
-manhattan.ab=count(manhattan.occ)
-head(manhattan.ab)
-westchester.ab=count(westchester.occ)
-head(westchester.ab)
-#Then re-name the columns as previously. Here just the Bronx
-bronx.ab=data.frame("bronx", bronx.ab)
-head(bronx.ab)
-names(bronx.ab)<-c("ListID", "SpeciesID", "Freq")
-head(bronx.ab)
-manhattan.ab=data.frame("manhattan", manhattan.ab)
-head(manhattan.ab)
-names(manhattan.ab)<-c("ListID", "SpeciesID", "Freq")
-head(manhattan.ab)
-westchester.ab=data.frame("westchester", westchester.ab)
-head(westchester.ab)
-names(westchester.ab)<-c("ListID", "SpeciesID", "Freq")
-head(westchester.ab)
-threecounty.ab=rbind(bronx.ab, manhattan.ab, westchester.ab)
+Arlington.ab=count(Arlington.occ)
+head(Arlington.ab)
+Fairfax.ab=count(Fairfax.occ)
+head(Fairfax.ab)
+Amherst.ab=count(Amherst.occ)
+head(Amherst.ab)
+#Then re-name the columns as previously. Here just the Arlington
+Arlington.ab=data.frame("Arlington", Arlington.ab)
+head(Arlington.ab)
+names(Arlington.ab)<-c("ListID", "SpeciesID", "Freq")
+head(Arlington.ab)
+Fairfax.ab=data.frame("Fairfax", Fairfax.ab)
+head(Fairfax.ab)
+names(Fairfax.ab)<-c("ListID", "SpeciesID", "Freq")
+head(Fairfax.ab)
+Amherst.ab=data.frame("Amherst", Amherst.ab)
+head(Amherst.ab)
+names(Amherst.ab)<-c("ListID", "SpeciesID", "Freq")
+head(Amherst.ab)
+threecounty.ab=rbind(Arlington.ab, Fairfax.ab, Amherst.ab)
 head(threecounty.ab)
 tail(threecounty.ab)
 dim(threecounty.ab)
